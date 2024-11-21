@@ -3,23 +3,24 @@
 import { myFetch } from "@/app/common/APIs/baseService";
 import { FetchResponse, HttpMethod } from "@/app/common/APIs/typesService";
 import { cookies } from "next/headers";
+import { RegisterUserProps } from "../register/interfaces/register-user-props.interface";
 
-// export async function registerUserService(userData: RegisterUserProps) {
-//   let data: FetchResponse = { success: false };
-//   await myFetch<FetchResponse>(
-//     false,
-//     false,
-//     `auth/register`,
-//     JSON.stringify({ ...userData }),
-//     (response) => {
-//       data = response;
-//     },
-//     (error) => console.error(error),
-//     HttpMethod.POST,
-//     { "Content-Type": "application/json" }
-//   );
-//   return data;
-// }
+export async function registerUserService(userData: RegisterUserProps) {
+  let data: FetchResponse = { success: false };
+  await myFetch<FetchResponse>(
+    false,
+    false,
+    `auth/register`,
+    JSON.stringify({ ...userData }),
+    (response) => {
+      data = response;
+    },
+    (error) => console.error(error),
+    HttpMethod.POST,
+    { "Content-Type": "application/json" }
+  );
+  return data;
+}
 
 // export async function loginUserService(userData: LoginUserProps) {
 //   let data: FetchResponse = { success: false };
