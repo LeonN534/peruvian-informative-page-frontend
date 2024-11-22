@@ -77,42 +77,45 @@ export async function restorePasswordService(
   return data;
 }
 
-// export async function changePasswordService(userData: ChangePasswordProps) {
-//   const jwt = await getAuthToken();
-//   let data: FetchResponse = { success: false };
-//   await myFetch<FetchResponse>(
-//     false,
-//     false,
-//     `auth/change-password`,
-//     JSON.stringify({ ...userData }),
-//     (response) => {
-//       data = response;
-//     },
-//     (error) => console.error(error),
-//     HttpMethod.POST,
-//     {
-//       Authorization: `Bearer ${jwt}`,
-//       "Content-Type": "application/json",
-//     }
-//   );
-//   return data;
-// }
+export async function changePasswordService(userData: {
+  currentPassword: string;
+  newPassword: string;
+}) {
+  const jwt = await getAuthToken();
+  let data: FetchResponse = { success: false };
+  await myFetch<FetchResponse>(
+    false,
+    false,
+    `auth/change-password`,
+    JSON.stringify({ ...userData }),
+    (response) => {
+      data = response;
+    },
+    (error) => console.error(error),
+    HttpMethod.POST,
+    {
+      Authorization: `Bearer ${jwt}`,
+      "Content-Type": "application/json",
+    }
+  );
+  return data;
+}
 
-// export async function verifyToken(token: string) {
-//   let data: FetchResponse = { success: false };
-//   await myFetch<FetchResponse>(
-//     false,
-//     false,
-//     `auth/forgot-password/validate-token?token=${token}`,
-//     "",
-//     (response) => {
-//       data = response;
-//     },
-//     (error) => console.error(error),
-//     HttpMethod.POST
-//   );
-//   return data;
-// }
+export async function verifyToken(token: string) {
+  let data: FetchResponse = { success: false };
+  await myFetch<FetchResponse>(
+    false,
+    false,
+    `auth/forgot-password/validate-token?token=${token}`,
+    "",
+    (response) => {
+      data = response;
+    },
+    (error) => console.error(error),
+    HttpMethod.POST
+  );
+  return data;
+}
 
 export async function getLoggedInUser() {
   const authToken = await getAuthToken();
