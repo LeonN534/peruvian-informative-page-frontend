@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useUserSessionStore } from "../hooks/useUserSessionSweet";
 import Profile from "@/../public/profile.png";
+import { Home } from "@/../public/icons";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -17,7 +18,8 @@ const Navbar = () => {
 
   return (
     <nav className="bg-gray-700 px-40 py-10 flex text-white items-center">
-      <Link href="/" className="font-black text-3xl mr-auto">
+      <Link href="/" className="font-black text-3xl mr-auto flex gap-2 p-2">
+        <Home className="w-10 h-10 stroke-white stroke-2" />
         Grupo 2
       </Link>
       <ul className="flex text-white text-lg font-bold justify-center gap-4">

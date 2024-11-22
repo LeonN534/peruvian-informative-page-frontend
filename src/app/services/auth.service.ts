@@ -3,7 +3,7 @@
 import { myFetch } from "@/app/common/APIs/baseService";
 import { FetchResponse, HttpMethod } from "@/app/common/APIs/typesService";
 import { cookies } from "next/headers";
-import { RegisterUserProps } from "../register/interfaces/register-user-props.interface";
+import { RegisterUserProps } from "../(auth)/register/interfaces/register-user-props.interface";
 
 export async function registerUserService(userData: RegisterUserProps) {
   let data: FetchResponse = { success: false };

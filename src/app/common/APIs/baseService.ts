@@ -21,7 +21,7 @@ export async function myFetch<T extends FetchResponse>(
   const url = isCustomURL ? endpoint : `${BASE_URL}/${endpoint}`;
 
   return fetch(url, {
-    cache: cache || "no-cache",
+    cache: cache || "force-cache",
     method,
     next: { ...nextOpions },
     headers: {

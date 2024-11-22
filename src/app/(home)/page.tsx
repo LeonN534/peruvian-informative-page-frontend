@@ -1,7 +1,7 @@
 import Image from "next/image";
 import BanderaHuanuco from "@/../public/bandera-huanuco.png";
 import BanderaPeru from "@/../public/bandera-peru.png";
-import MemberCard from "./components/MemberCard";
+import MemberCard from "../components/MemberCard";
 
 export default function Home() {
   return (
