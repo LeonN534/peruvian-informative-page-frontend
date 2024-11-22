@@ -3,7 +3,7 @@
 import BasicInput from "@/app/components/BasicInput";
 import Link from "next/link";
 import React, { useActionState } from "react";
-import { registerUserAction } from "../../actions/auth.action";
+import { loginUserAction } from "../../actions/auth.action";
 
 const initialState = {
   zodErrors: null,
@@ -17,7 +17,7 @@ const initialState = {
 
 const LoginForm = () => {
   const [state, formAction, isPending] = useActionState(
-    registerUserAction,
+    loginUserAction,
     initialState
   );
   return (
@@ -46,14 +46,16 @@ const LoginForm = () => {
         type="password"
         defaultValue={state.fieldsData.password}
         required
-        hasBackendErrors
+        hasForgotPassword
       />
       <div className="text-white flex justify-between items-center">
-        <div className="flex text-base gap-2">
-          <p className="text-gray-400">¿Aún no tines una cuenta?</p>
-          <Link href="/register" className="underline">
-            Resgístrate
-          </Link>
+        <div>
+          <div className="flex text-base gap-2">
+            <p className="text-gray-400">¿Aún no tienes una cuenta?</p>
+            <Link href="/register" className="underline">
+              Resgístrate
+            </Link>
+          </div>
         </div>
         <button
           className="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold disabled:bg-gray-300"

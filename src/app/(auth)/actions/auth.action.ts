@@ -5,7 +5,10 @@ import { z } from "zod";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { revalidatePath, revalidateTag } from "next/cache";
-import { registerUserService } from "../../services/auth.service";
+import {
+  loginUserService,
+  registerUserService,
+} from "../../services/auth.service";
 
 const cookieConfig = {
   maxAge: 60 * 60 * 24,
@@ -157,51 +160,63 @@ export async function registerUserAction(prevState: any, formData: FormData) {
   }
 }
 
-// export async function loginUserAction(prevState: any, formData: FormData) {
-//   const validatedFields = schemaLogin.safeParse({
-//     email: formData.get("email"),
-//     password: formData.get("password"),
-//   });
+export async function loginUserAction(prevState: any, formData: FormData) {
+  const validatedFields = schemaLogin.safeParse({
+    email: formData.get("email"),
+    password: formData.get("password"),
+  });
 
-//   if (!validatedFields.success) {
-//     return {
-//       ...prevState,
-//       zodErrors: validatedFields.error.flatten().fieldErrors,
-//       message: "Error en los campos.",
-//       apiErrors: null,
-//     };
-//   }
+  if (!validatedFields.success) {
+    return {
+      ...prevState,
+      zodErrors: validatedFields.error.flatten().fieldErrors,
+      message: "Error en los campos.",
+      apiErrors: null,
+      fieldsData: {
+        email: formData.get("email"),
+        password: formData.get("password"),
+      },
+    };
+  }
 
-//   const responseData = await loginUserService(validatedFields.data);
+  const responseData = await loginUserService(validatedFields.data);
 
-//   if (!responseData) {
-//     return {
-//       ...prevState,
-//       apiErrors: null,
-//       zodErrors: null,
-//       message: "Ops! Algo salió mal. Por favor, inténtalo de nuevo.",
-//     };
-//   }
+  if (!responseData) {
+    return {
+      ...prevState,
+      apiErrors: null,
+      zodErrors: null,
+      message: "Ops! Algo salió mal. Por favor, inténtalo de nuevo.",
+      fieldsData: {
+        email: formData.get("email"),
+        password: formData.get("password"),
+      },
+    };
+  }
 
-//   if (responseData.error) {
-//     return {
-//       ...prevState,
-//       apiErrors: responseData,
-//       zodErrors: null,
-//       message: "Fallo en el inicio de sesión.",
-//     };
-//   }
+  if (responseData.error) {
+    return {
+      ...prevState,
+      apiErrors: responseData,
+      zodErrors: null,
+      message: "Fallo en el inicio de sesión.",
+      fieldsData: {
+        email: formData.get("email"),
+        password: formData.get("password"),
+      },
+    };
+  }
 
-//   if (responseData.success && responseData.token) {
-//     cookies().set("jwt", responseData.token, {
-//       ...cookieConfig,
-//       sameSite: "lax",
-//     });
-//     revalidateTag("auth");
-
-//     redirect(SceneNames.home);
-//   }
-// }
+  if (responseData.success && responseData.token) {
+    const cookiesStore = await cookies();
+    cookiesStore.set("jwt", responseData.token, {
+      ...cookieConfig,
+      sameSite: "lax",
+    });
+    revalidateTag("auth");
+    redirect("/");
+  }
+}
 
 // export async function forgotPasswordAction(prevState: any, formData: FormData) {
 //   const validatedFields = schemaForgotPassword.safeParse({

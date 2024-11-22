@@ -5,6 +5,7 @@ import { FetchResponse } from "@/app/common/APIs/typesService";
 import ValidationErrors from "./ValidationErrors";
 import BackendValidationError from "./BackendValidationError";
 import { EyeClosed, EyeOpen } from "@/../public/icons";
+import Link from "next/link";
 
 const BasicInput = ({
   name,
@@ -19,6 +20,7 @@ const BasicInput = ({
   formState,
   defaultValue,
   hasBackendErrors,
+  hasForgotPassword,
 }: {
   name: string;
   label: string;
@@ -32,6 +34,7 @@ const BasicInput = ({
   formState: any;
   defaultValue?: string;
   hasBackendErrors?: boolean;
+  hasForgotPassword?: boolean;
 }) => {
   const [options, setOptions] = useState<string[]>([]);
   const [newType, setNewType] = useState<HTMLInputTypeAttribute>(type);
@@ -101,6 +104,13 @@ const BasicInput = ({
           </button>
         )}
       </div>
+      {hasForgotPassword && (
+        <div className="text-white flex text-base gap-2 mt-1">
+          <Link href="/forgot-password" className="underline">
+            Olvidé mi contraseña
+          </Link>
+        </div>
+      )}
       <ValidationErrors error={formState.zodErrors?.[name]} />
       {hasBackendErrors && (
         <BackendValidationError error={formState.apiErrors} />

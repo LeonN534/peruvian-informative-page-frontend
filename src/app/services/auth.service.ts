@@ -4,6 +4,7 @@ import { myFetch } from "@/app/common/APIs/baseService";
 import { FetchResponse, HttpMethod } from "@/app/common/APIs/typesService";
 import { cookies } from "next/headers";
 import { RegisterUserProps } from "../(auth)/register/interfaces/register-user-props.interface";
+import { LoginUserProps } from "../(auth)/register/interfaces/login-user-props.interface";
 
 export async function registerUserService(userData: RegisterUserProps) {
   let data: FetchResponse = { success: false };
@@ -22,22 +23,22 @@ export async function registerUserService(userData: RegisterUserProps) {
   return data;
 }
 
-// export async function loginUserService(userData: LoginUserProps) {
-//   let data: FetchResponse = { success: false };
-//   await myFetch<FetchResponse>(
-//     false,
-//     false,
-//     `auth/login`,
-//     JSON.stringify({ ...userData }),
-//     (response) => {
-//       data = response;
-//     },
-//     (error) => console.error(error),
-//     HttpMethod.POST,
-//     { "Content-Type": "application/json" }
-//   );
-//   return data;
-// }
+export async function loginUserService(userData: LoginUserProps) {
+  let data: FetchResponse = { success: false };
+  await myFetch<FetchResponse>(
+    false,
+    false,
+    `auth/login`,
+    JSON.stringify({ ...userData }),
+    (response) => {
+      data = response;
+    },
+    (error) => console.error(error),
+    HttpMethod.POST,
+    { "Content-Type": "application/json" }
+  );
+  return data;
+}
 
 // export async function forgotPasswordService(userData: ForgotPasswordProps) {
 //   let data: FetchResponse = { success: false };
