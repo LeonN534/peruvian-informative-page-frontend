@@ -48,22 +48,22 @@ export default function Home() {
           <MemberCard
             name="Carbajal Herrera Luis Manuel"
             photo={BanderaHuanuco}
-            linkUrl="https://github.com/LeonN534"
+            linkUrl="www.google.com"
           />
           <MemberCard
             name="Claudio Montes Kevin Saith"
             photo={BanderaHuanuco}
-            linkUrl="https://github.com/LeonN534"
+            linkUrl="www.google.com"
           />
           <MemberCard
             name="Julca Garcia Jhonatan Aníbal"
             photo={BanderaHuanuco}
-            linkUrl="https://github.com/LeonN534"
+            linkUrl="www.google.com"
           />
           <MemberCard
             name="Rosa Lucas Fredhy Eduardo"
             photo={BanderaHuanuco}
-            linkUrl="https://github.com/LeonN534"
+            linkUrl="https://github.com/lucsducks"
           />
         </div>
       </div>

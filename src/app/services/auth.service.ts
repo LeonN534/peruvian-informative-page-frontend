@@ -40,22 +40,22 @@ export async function loginUserService(userData: LoginUserProps) {
   return data;
 }
 
-// export async function forgotPasswordService(userData: ForgotPasswordProps) {
-//   let data: FetchResponse = { success: false };
-//   await myFetch<FetchResponse>(
-//     false,
-//     false,
-//     `auth/forgot-password`,
-//     JSON.stringify({ ...userData }),
-//     (response) => {
-//       data = response;
-//     },
-//     (error) => console.error(error),
-//     HttpMethod.POST,
-//     { "Content-Type": "application/json" }
-//   );
-//   return data;
-// }
+export async function forgotPasswordService(userData: { email: string }) {
+  let data: FetchResponse = { success: false };
+  await myFetch<FetchResponse>(
+    false,
+    false,
+    `auth/forgot-password`,
+    JSON.stringify({ ...userData }),
+    (response) => {
+      data = response;
+    },
+    (error) => console.error(error),
+    HttpMethod.POST,
+    { "Content-Type": "application/json" }
+  );
+  return data;
+}
 
 // export async function restorePasswordService(
 //   userData: RestorePasswordProps,

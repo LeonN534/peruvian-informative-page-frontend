@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { revalidatePath, revalidateTag } from "next/cache";
 import {
+  forgotPasswordService,
   loginUserService,
   registerUserService,
 } from "../../services/auth.service";
@@ -218,45 +219,57 @@ export async function loginUserAction(prevState: any, formData: FormData) {
   }
 }
 
-// export async function forgotPasswordAction(prevState: any, formData: FormData) {
-//   const validatedFields = schemaForgotPassword.safeParse({
-//     email: formData.get("email"),
-//   });
+export async function forgotPasswordAction(prevState: any, formData: FormData) {
+  const validatedFields = schemaForgotPassword.safeParse({
+    email: formData.get("email"),
+  });
 
-//   if (!validatedFields.success) {
-//     return {
-//       ...prevState,
-//       zodErrors: validatedFields.error.flatten().fieldErrors,
-//       message: "Error en los campos.",
-//       apiErrors: null,
-//     };
-//   }
+  if (!validatedFields.success) {
+    return {
+      ...prevState,
+      zodErrors: validatedFields.error.flatten().fieldErrors,
+      message: "Error en los campos.",
+      apiErrors: null,
+      fieldsData: {
+        email: formData.get("email"),
+      },
+    };
+  }
 
-//   const responseData = await forgotPasswordService(validatedFields.data);
+  const responseData = await forgotPasswordService(validatedFields.data);
 
-//   if (!responseData) {
-//     return {
-//       ...prevState,
-//       apiErrors: null,
-//       zodErrors: null,
-//       message: "Ops! Algo salió mal. Por favor, inténtalo de nuevo.",
-//     };
-//   }
+  if (!responseData) {
+    return {
+      ...prevState,
+      apiErrors: null,
+      zodErrors: null,
+      message: "Ops! Algo salió mal. Por favor, inténtalo de nuevo.",
+      fieldsData: {
+        email: formData.get("email"),
+      },
+    };
+  }
 
-//   if (responseData.error) {
-//     return {
-//       ...prevState,
-//       apiErrors: responseData,
-//       zodErrors: null,
-//       message: "Fallo en el inicio de sesión.",
-//     };
-//   }
+  if (responseData.error) {
+    return {
+      ...prevState,
+      apiErrors: responseData,
+      zodErrors: null,
+      message: "Fallo en el inicio de sesión.",
+      fieldsData: {
+        email: formData.get("email"),
+      },
+    };
+  }
 
-//   return {
-//     ...prevState,
-//     modal: true,
-//   };
-// }
+  return {
+    ...prevState,
+    fieldsData: {
+      email: formData.get("email"),
+    },
+    modal: true,
+  };
+}
 
 // export async function restorePasswordAction(
 //   token: string,
