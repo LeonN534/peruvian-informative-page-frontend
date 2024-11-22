@@ -2,9 +2,8 @@
 
 import React, { useActionState } from "react";
 import { forgotPasswordAction } from "@/app/(auth)/actions/auth.action";
-// import EmailSentModal from "./EmailSentModal";
 import BasicInput from "@/app/components/BasicInput";
-import EmailSentModal from "./EmailSentModal";
+import InformationalModal from "./InformationalModal";
 
 const initialState = {
   data: null,
@@ -25,7 +24,13 @@ const ForgotPasswordForm = () => {
 
   return (
     <>
-      {state.modal && <EmailSentModal />}
+      {state.modal && (
+        <InformationalModal
+          title="Email enviado correctamente"
+          content="El email fue enviado correctamente. Revisar la carpeta de Spam en caso
+          sea necesario."
+        />
+      )}
       <form
         className="text-xl flex flex-col gap-8"
         id="login-form"

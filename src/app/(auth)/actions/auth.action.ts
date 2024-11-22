@@ -9,6 +9,7 @@ import {
   forgotPasswordService,
   loginUserService,
   registerUserService,
+  restorePasswordService,
 } from "../../services/auth.service";
 
 const cookieConfig = {
@@ -271,56 +272,78 @@ export async function forgotPasswordAction(prevState: any, formData: FormData) {
   };
 }
 
-// export async function restorePasswordAction(
-//   token: string,
-//   prevState: any,
-//   formData: FormData
-// ) {
-//   const validatedFields = schemaRestorePassword.safeParse({
-//     newPassword: formData.get("newPassword"),
-//     confirmedPassword: formData.get("confirmedPassword"),
-//   });
+export async function restorePasswordAction(
+  token: string,
+  prevState: any,
+  formData: FormData
+) {
+  const validatedFields = schemaRestorePassword.safeParse({
+    newPassword: formData.get("newPassword"),
+    confirmedPassword: formData.get("confirmedPassword"),
+  });
 
-//   if (!validatedFields.success) {
-//     return {
-//       ...prevState,
-//       zodErrors: validatedFields.error.flatten().fieldErrors,
-//       message: "Error en los campos.",
-//       apiErrors: null,
-//     };
-//   }
+  if (!validatedFields.success) {
+    return {
+      ...prevState,
+      zodErrors: validatedFields.error.flatten().fieldErrors,
+      message: "Error en los campos.",
+      apiErrors: null,
+      fieldsData: {
+        newPassword: formData.get("newPassword"),
+        confirmedPassword: formData.get("confirmedPassword"),
+      },
+    };
+  }
+  const responseData = await restorePasswordService(
+    {
+      password: validatedFields.data.newPassword,
+    },
+    token
+  );
 
-//   const responseData = await restorePasswordService(
-//     {
-//       password: validatedFields.data.newPassword,
-//     },
-//     token
-//   );
+  if (!responseData) {
+    return {
+      ...prevState,
+      apiErrors: null,
+      zodErrors: null,
+      message: "Ops! Algo salió mal. Por favor, inténtalo de nuevo.",
+      fieldsData: {
+        newPassword: formData.get("newPassword"),
+        confirmedPassword: formData.get("confirmedPassword"),
+      },
+    };
+  }
 
-//   if (!responseData) {
-//     return {
-//       ...prevState,
-//       apiErrors: null,
-//       zodErrors: null,
-//       message: "Ops! Algo salió mal. Por favor, inténtalo de nuevo.",
-//     };
-//   }
+  if (responseData.error) {
+    return {
+      ...prevState,
+      apiErrors: responseData,
+      zodErrors: null,
+      message: "Fallo en el inicio de sesión.",
+      fieldsData: {
+        newPassword: formData.get("newPassword"),
+        confirmedPassword: formData.get("confirmedPassword"),
+      },
+    };
+  }
 
-//   if (responseData.error) {
-//     return {
-//       ...prevState,
-//       apiErrors: responseData,
-//       zodErrors: null,
-//       message: "Fallo en el inicio de sesión.",
-//     };
-//   }
+  const cookiesStore = await cookies();
 
-//   cookies().set("jwt", "", { ...cookieConfig, maxAge: 0, sameSite: "strict" });
-//   return {
-//     ...prevState,
-//     modal: true,
-//   };
-// }
+  cookiesStore.set("jwt", "", {
+    ...cookieConfig,
+    maxAge: 0,
+    sameSite: "strict",
+  });
+
+  return {
+    ...prevState,
+    modal: true,
+    fieldsData: {
+      newPassword: formData.get("newPassword"),
+      confirmedPassword: formData.get("confirmedPassword"),
+    },
+  };
+}
 
 // export async function changePasswordAction(prevState: any, formData: FormData) {
 //   const validatedFields = schemaChangePassword.safeParse({

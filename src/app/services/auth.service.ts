@@ -57,25 +57,25 @@ export async function forgotPasswordService(userData: { email: string }) {
   return data;
 }
 
-// export async function restorePasswordService(
-//   userData: RestorePasswordProps,
-//   token: string
-// ) {
-//   let data: FetchResponse = { success: false };
-//   await myFetch<FetchResponse>(
-//     false,
-//     false,
-//     `auth/forgot-password/restore?token=${token}`,
-//     JSON.stringify({ ...userData }),
-//     (response) => {
-//       data = response;
-//     },
-//     (error) => console.error(error),
-//     HttpMethod.POST,
-//     { "Content-Type": "application/json" }
-//   );
-//   return data;
-// }
+export async function restorePasswordService(
+  userData: { password: string },
+  token: string
+) {
+  let data: FetchResponse = { success: false };
+  await myFetch<FetchResponse>(
+    false,
+    false,
+    `auth/forgot-password/restore?token=${token}`,
+    JSON.stringify({ ...userData }),
+    (response) => {
+      data = response;
+    },
+    (error) => console.error(error),
+    HttpMethod.POST,
+    { "Content-Type": "application/json" }
+  );
+  return data;
+}
 
 // export async function changePasswordService(userData: ChangePasswordProps) {
 //   const jwt = await getAuthToken();
