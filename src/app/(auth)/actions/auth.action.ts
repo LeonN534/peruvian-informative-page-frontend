@@ -390,7 +390,12 @@ export async function restorePasswordAction(
 //   };
 // }
 
-// export async function logoutAction() {
-//   cookies().set("jwt", "", { ...cookieConfig, maxAge: 0, sameSite: "strict" });
-//   revalidateTag("auth");
-// }
+export async function logoutAction() {
+  const cookiesStore = await cookies();
+  cookiesStore.set("jwt", "", {
+    ...cookieConfig,
+    maxAge: 0,
+    sameSite: "strict",
+  });
+  revalidateTag("auth");
+}

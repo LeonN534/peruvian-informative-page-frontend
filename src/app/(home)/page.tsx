@@ -37,7 +37,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="p-20">
+      <div className="p-20 bg-slate-200">
         <h2 className="text-3xl font-semibold text-center">Somos el Grupo 2</h2>
         <div className="mt-20 flex flex-wrap justify-center gap-20">
           <MemberCard
