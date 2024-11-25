@@ -25,7 +25,7 @@ const Navbar = () => {
       <ul className="flex text-white text-lg font-bold justify-center gap-4">
         <li>
           <Link
-            href="/economic-structure"
+            href="/economic-structure?page=1"
             className={`px-4 py-2 rounded-md block ${
               pathname === "/economic-structure" && "bg-gray-400 text-gray-800"
             }`}
@@ -37,7 +37,7 @@ const Navbar = () => {
           <Link
             href="/descentralization-process"
             className={`px-4 py-2 rounded-md block ${
-              pathname === "/descentralization-process" &&
+              pathname === "/descentralization-process?page=1" &&
               "bg-gray-400 text-gray-800"
             }`}
           >
