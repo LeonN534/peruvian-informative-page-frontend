@@ -17,7 +17,7 @@ const Comentaries = async ({
   if (!resData.success)
     return (
       <div className="bg-slate-900 text-4xl font-bold text-red-600 p-10">
-        Error on comments
+        No comments to show
       </div>
     );
 
