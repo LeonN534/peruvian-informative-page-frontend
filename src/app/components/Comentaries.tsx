@@ -13,7 +13,6 @@ const Comentaries = async ({
 }) => {
   const resData = await getComentariesByTopic(topic, 10 * (page - 1));
 
-  console.log("resData", resData);
   if (!resData.success)
     return (
       <div className="bg-slate-900 text-4xl font-bold text-red-600 p-10">

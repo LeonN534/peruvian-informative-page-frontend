@@ -1,3 +1,5 @@
+"use server";
+
 import { revalidateTag } from "next/cache";
 import { myFetch } from "../common/APIs/baseService";
 import { FetchResponse, HttpMethod } from "../common/APIs/typesService";

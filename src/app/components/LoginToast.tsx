@@ -1,13 +1,23 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { useToastStore } from "../hooks/useToastSweet";
 import { X } from "lucide-react";
 
 const LoginToast = () => {
   const [state, { setState }] = useToastStore();
-  console.log("show", state);
+
+  useEffect(() => {
+    if (state.show) {
+      const timer = setTimeout(() => {
+        setState(false);
+      }, 5000);
+
+      return () => clearTimeout(timer); // Cleanup the timer if the component unmounts or state changes
+    }
+  }, [state.show]);
+
   return (
     <div
       className={`fixed bg-red-100 w-11/12 border-2 border-red-500 rounded-xl text-xl font-semibold text-red-800 flex justify-between pl-2 pr-10 py-2 left-1/2 transition-all duration-300 z-10 ${

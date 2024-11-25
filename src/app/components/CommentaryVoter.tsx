@@ -13,7 +13,7 @@ const CommentaryVoter = ({
   commentaryId: number;
   commentariesVotedByUser: CommentaryVotedByUser[];
 }) => {
-  const [show, { setState }] = useToastStore();
+  const [, { setState }] = useToastStore();
 
   const totalpositiveVotes = commentariesVotedByUser.filter(
     (comment) => comment.vote == "up"
@@ -32,11 +32,8 @@ const CommentaryVoter = ({
 
   const handleVote = async (vote: "up" | "down") => {
     const response = await voteCommentary(commentaryId, vote);
-    console.log(response);
-    if (response.status === 401) {
-      setState(true);
-      return;
-    }
+
+    if (response.status === 401) setState(true);
   };
 
   return (
