@@ -7,7 +7,7 @@ import PBIHco2 from "@/../public/images/pbi-huanuco-2.png";
 
 const EconomicStructurePage = () => {
   return (
-    <main className="bg-slate-800 text-white px-40 py-20">
+    <main className="text-white px-40 py-20 bg-gradient-to-br from-slate-800 to-slate-950">
       <h1 className="text-8xl font-bold">
         Estructura económica y desarrollo del país y la región
       </h1>
