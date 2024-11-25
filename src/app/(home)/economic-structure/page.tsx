@@ -7,6 +7,7 @@ import PBIHco2 from "@/../public/images/pbi-huanuco-2.png";
 import Comentaries from "@/app/components/Comentaries";
 import { Topics } from "@/app/enums/topics.enum";
 import LoginToast from "@/app/components/LoginToast";
+import ConfirmationModal from "@/app/components/ConfirmationModal";
 
 const EconomicStructurePage = async ({
   searchParams,
@@ -16,6 +17,7 @@ const EconomicStructurePage = async ({
   const { page } = await searchParams;
   return (
     <>
+      <ConfirmationModal />
       <LoginToast />
       <main className="text-white px-40 py-20 bg-gradient-to-br from-slate-800 to-slate-950">
         <h1 className="text-8xl font-bold">

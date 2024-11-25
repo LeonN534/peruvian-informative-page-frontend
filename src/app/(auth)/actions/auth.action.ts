@@ -4,7 +4,7 @@ import { z } from "zod";
 
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
-import { revalidatePath, revalidateTag } from "next/cache";
+import { revalidateTag } from "next/cache";
 import {
   changePasswordService,
   forgotPasswordService,

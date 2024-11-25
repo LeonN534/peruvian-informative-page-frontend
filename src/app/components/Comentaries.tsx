@@ -3,6 +3,7 @@ import { Topics } from "../enums/topics.enum";
 import { getComentariesByTopic } from "../services/commentaries.service";
 import { Commentary } from "../interfaces/commentary.interface";
 import CommentaryCard from "./CommentaryCard";
+import CommentaryForm from "./CommentaryForm";
 
 const Comentaries = async ({
   topic,
@@ -30,6 +31,7 @@ const Comentaries = async ({
           <CommentaryCard key={comment.id} commentary={comment} />
         ))}
       </div>
+      <CommentaryForm topic={topic} />
     </div>
   );
 };
