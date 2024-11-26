@@ -27,7 +27,8 @@ const Navbar = () => {
           <Link
             href="/economic-structure?page=1"
             className={`px-4 py-2 rounded-md block ${
-              pathname === "/economic-structure" && "bg-gray-400 text-gray-800"
+              pathname.startsWith("/economic-structure") &&
+              "bg-gray-400 text-gray-800"
             }`}
           >
             Estructura económica y desarrollo
@@ -35,9 +36,9 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            href="/descentralization-process"
+            href="/descentralization-process?page=1"
             className={`px-4 py-2 rounded-md block ${
-              pathname === "/descentralization-process?page=1" &&
+              pathname.startsWith("/descentralization-process") &&
               "bg-gray-400 text-gray-800"
             }`}
           >

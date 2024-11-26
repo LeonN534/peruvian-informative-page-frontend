@@ -18,16 +18,19 @@ const Comentaries = async ({
 
   if (!resData.success || resData.data.length === 0)
     return (
-      <div className="bg-slate-900 text-4xl font-bold text-red-600 p-10 text-center">
-        Sin comentarios que mostrar
-        <div className="flex items-center justify-center gap-10">
-          <Link href={`/${topic}?page=${page - 1}`}>
-            <ArrowLeft className="w-10 h-10 mt-5 text-white" />
-          </Link>
-          <Link href={`/${topic}?page=${page + 1}`}>
-            <ArrowRight className="w-10 h-10 mt-5 text-white" />
-          </Link>
+      <div className="bg-slate-900 text-white px-40 py-10">
+        <div className="bg-slate-900 text-4xl font-bold text-red-600 p-10 text-center flex flex-col gap-10">
+          Sin comentarios que mostrar
+          <div className="flex items-center justify-center gap-10">
+            <Link href={`/${topic}?page=${page - 1}`}>
+              <ArrowLeft className="w-10 h-10 mt-5 text-white" />
+            </Link>
+            <Link href={`/${topic}?page=${page + 1}`}>
+              <ArrowRight className="w-10 h-10 mt-5 text-white" />
+            </Link>
+          </div>
         </div>
+        <CommentaryForm topic={topic} />
       </div>
     );
 
