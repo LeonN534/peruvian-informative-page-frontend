@@ -31,26 +31,26 @@ const EconomicStructurePage = async ({
             <h3 className="font-semibold">Contexto histórico nacional</h3>
             <div className="flex flex-col gap-5 ml-10">
               <div className="flex flex-col gap-3 items-start">
-                <h4 className="text-xl font-medium">- Independencia</h4>
-                <p className="text-lg">
+                <h4 className="text-2xl font-medium">- Independencia</h4>
+                <p className="text-2xl">
                   La independencia de Perú en 1821 permitió el establecimiento
                   de una economía nacional independiente, lo que facilitó la
                   creación de políticas económicas propias.
                 </p>
               </div>
               <div className="flex flex-col gap-3 items-start">
-                <h4 className="text-xl font-medium">- Reforma Agraria</h4>
-                <p className="text-lg">
+                <h4 className="text-2xl font-medium">- Reforma Agraria</h4>
+                <p className="text-2xl">
                   Las reforma agraria en las década de 1970 redistribuyeron las
                   tierras, impactando profundamente la economía rural y la
                   estructura agraria del país.
                 </p>
               </div>
               <div className="flex flex-col gap-3 items-start">
-                <h4 className="text-xl font-medium">
+                <h4 className="text-2xl font-medium">
                   - Políticas Neoliberales
                 </h4>
-                <p className="text-lg">
+                <p className="text-2xl">
                   En los años 90, las políticas neoliberales promovieron la
                   apertura económica, modernizando la economía peruana e
                   integrándola al mercado global
@@ -60,20 +60,20 @@ const EconomicStructurePage = async ({
             <h3 className="font-semibold mt-16">Contexto histórico regional</h3>
             <div className="flex flex-col gap-5 ml-10">
               <div className="flex flex-col gap-3 items-start">
-                <h4 className="text-xl font-medium">
+                <h4 className="text-2xl font-medium">
                   - Participación en la Independencia
                 </h4>
-                <p className="text-lg">
+                <p className="text-2xl">
                   Huánuco tuvo un papel significativo en la lucha por la
                   independencia, lo que fortaleció su identidad regional y su
                   integración en la economía nacional.
                 </p>
               </div>
               <div className="flex flex-col gap-3 items-start">
-                <h4 className="text-xl font-medium">
+                <h4 className="text-2xl font-medium">
                   - Desafíos de Infraestructura
                 </h4>
-                <p className="text-lg">
+                <p className="text-2xl">
                   Históricamente, Huánuco ha enfrentado desafíos en
                   infraestructura, lo que ha limitado su desarrollo económico y
                   su capacidad para conectarse eficazmente con el resto del
@@ -81,10 +81,10 @@ const EconomicStructurePage = async ({
                 </p>
               </div>
               <div className="flex flex-col gap-3 items-start">
-                <h4 className="text-xl font-medium">
+                <h4 className="text-2xl font-medium">
                   - Impacto de la Reforma Agraria
                 </h4>
-                <p className="text-lg">
+                <p className="text-2xl">
                   Las reformas agrarias afectaron a Huánuco de manera
                   significativa, cambiando la estructura de la tenencia de la
                   tierra y el desarrollo agrícola regional.
@@ -104,8 +104,8 @@ const EconomicStructurePage = async ({
               </h3>
               <div className="flex flex-col gap-5 ml-10 mt-10 max-w-[800px]">
                 <div className="flex flex-col gap-3 items-start">
-                  <h4 className="text-xl font-medium">- Sector primario </h4>
-                  <p className="text-lg">
+                  <h4 className="text-2xl font-medium">- Sector primario </h4>
+                  <p className="text-2xl">
                     El sector primario engloba actividades relacionadas con la
                     extracción y recolección de recursos naturales. Esto incluye
                     agricultura, ganadería, pesca, minería y explotación
@@ -113,8 +113,8 @@ const EconomicStructurePage = async ({
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 items-start">
-                  <h4 className="text-xl font-medium">- Sector secundario</h4>
-                  <p className="text-lg">
+                  <h4 className="text-2xl font-medium">- Sector secundario</h4>
+                  <p className="text-2xl">
                     El sector secundario se refiere a la transformación de
                     materias primas en productos manufacturados. Incluye
                     actividades industriales como la manufactura, la
@@ -122,8 +122,8 @@ const EconomicStructurePage = async ({
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 items-start">
-                  <h4 className="text-xl font-medium">- Sector terciario</h4>
-                  <p className="text-lg">
+                  <h4 className="text-2xl font-medium">- Sector terciario</h4>
+                  <p className="text-2xl">
                     El sector terciario abarca los servicios que no producen
                     bienes tangibles, pero que son esenciales para la economía.
                     Esto incluye comercio, transporte, turismo, educación,
@@ -136,7 +136,7 @@ const EconomicStructurePage = async ({
               <h3 className="font-semibold text-2xl mt-10">
                 Sectores económicos a nivel país
               </h3>
-              <p className="mt-8 text-lg">
+              <p className="mt-8 text-2xl">
                 Históricamente, la economía peruana ha dependido de la
                 explotación de recursos naturales, especialmente minería,
                 agricultura, y pesca.
@@ -178,7 +178,7 @@ const EconomicStructurePage = async ({
               <h3 className="font-semibold text-2xl mt-10">
                 Sectores económicos a nivel región
               </h3>
-              <p className="mt-8 text-lg">
+              <p className="mt-8 text-2xl">
                 La economía de la región de Huánuco ha dependido de la
                 explotación en gran medida de la producción agrícola y ganadera
               </p>
@@ -226,23 +226,23 @@ const EconomicStructurePage = async ({
               Relaciones internacionales a nivel país
             </h3>
             <div className="mt-10 ml-10">
-              <h4 className="text-xl font-medium">Alianza del Pacífico</h4>
-              <p className="text-lg mt-5">
+              <h4 className="text-2xl font-medium">Alianza del Pacífico</h4>
+              <p className="text-2xl mt-5">
                 Es una iniciativa de integración regional entre Chile, Colombia,
                 México y Perú, que busca convertirse en una plataforma de
                 articulación política, económica y comercial, así como de
                 proyección al mundo, con énfasis en la región Asia-Pacífico.
               </p>
-              <p className="text-lg mt-5">
+              <p className="text-2xl mt-5">
                 El Mincetur participa en el Grupo Técnico de Turismo de la
                 Alianza del Pacífico, con un trabajo orientado al cumplimiento
                 de los mandatos de las declaraciones suscritas por los
                 presidentes de los 4 países del bloque.
               </p>
-              <h4 className="text-xl font-medium mt-10">
+              <h4 className="text-2xl font-medium mt-10">
                 Algunas asociaciones a las cuales el Perú pertenece
               </h4>
-              <ul className="mt-5 flex gap-5 flex-col">
+              <ul className="mt-5 flex gap-5 flex-col text-lg">
                 <li>- Foro de Cooperación Económica Asia Pacífico (APEC)</li>
                 <li>- Organización de los Estados Americanos (OEA)</li>
                 <li>- Organización Mundial de Turismo (OMT)</li>
@@ -255,7 +255,7 @@ const EconomicStructurePage = async ({
             <h3 className="font-semibold mt-16 text-2xl">
               Comercio exterior a nivel país
             </h3>
-            <div className="text-lg flex flex-col gap-5 mt-10">
+            <div className="text-2xl flex flex-col gap-5 mt-10">
               <p>
                 Las exportaciones de productos mineros lideraron el comercio con
                 APEC en el primer semestre del año, con una participación del
@@ -277,7 +277,7 @@ const EconomicStructurePage = async ({
             <h3 className="font-semibold mt-16 text-2xl">
               Relaciones internacionales y comercio exterior a nivel región
             </h3>
-            <div className="text-lg flex flex-col gap-5 mt-10">
+            <div className="text-2xl flex flex-col gap-5 mt-10">
               <p>
                 En 2023, la exportación de Huánuco ascendió a US$ 13,4 millones,
                 valor 36% mayor al registrado el año previo, gracias a la mayor
@@ -317,7 +317,7 @@ const EconomicStructurePage = async ({
           <h3 className="font-semibold mt-16 text-2xl">
             Políticas a nivel nacional
           </h3>
-          <div className="text-lg flex flex-col gap-5 mt-10">
+          <div className="text-2xl flex flex-col gap-5 mt-10">
             <p>
               En Perú, las políticas de desarrollo económico y social se basan
               en el modelo de Economía Social de Mercado, adoptado en la
@@ -353,7 +353,7 @@ const EconomicStructurePage = async ({
           <h3 className="font-semibold mt-16 text-2xl">
             Políticas a nivel regional
           </h3>
-          <div className="text-lg flex flex-col gap-5 mt-10">
+          <div className="text-2xl flex flex-col gap-5 mt-10">
             <p>
               En la región Huánuco, la Gerencia de Desarrollo Económico del
               Gobierno Regional ha priorizado cinco cadenas productivas para
@@ -394,36 +394,36 @@ const EconomicStructurePage = async ({
             </h3>
             <div className="mt-10 ml-5 flex flex-col gap-4">
               <div className="flex flex-col gap-2">
-                <h4 className="text-xl font-medium">
+                <h4 className="text-2xl font-medium">
                   Dependencia de Recursos Naturales
                 </h4>
-                <p className="text-lg">
+                <p className="text-2xl">
                   Perú sigue dependiendo fuertemente de la minería, la cual
                   representa una parte significativa de su PIB.
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h4 className="text-xl font-medium">Desigualdad y Pobreza</h4>
-                <p className="text-lg">
+                <h4 className="text-2xl font-medium">Desigualdad y Pobreza</h4>
+                <p className="text-2xl">
                   Persisten disparidades significativas entre las áreas urbanas
                   y rurales, lo que complica el desarrollo inclusivo.
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h4 className="text-xl font-medium">
+                <h4 className="text-2xl font-medium">
                   Crisis Educativa y Salud
                 </h4>
-                <p className="text-lg">
+                <p className="text-2xl">
                   La calidad del sistema educativo y de salud sigue siendo un
                   desafío. Para fomentar un crecimiento inclusivo y sostenible,
                   será crucial mejorar estos sectores.
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h4 className="text-xl font-medium">
+                <h4 className="text-2xl font-medium">
                   Incertidumbre en el Sector Minero
                 </h4>
-                <p className="text-lg">
+                <p className="text-2xl">
                   Enfrenta desafíos adicionales como la oposición social a
                   proyectos mineros, la burocracia en la obtención de permisos y
                   más.
@@ -437,37 +437,37 @@ const EconomicStructurePage = async ({
             </h3>
             <div className="mt-10 ml-5 flex flex-col gap-4">
               <div className="flex flex-col gap-2">
-                <h4 className="text-xl font-medium">Reformas Estructurales</h4>
-                <p className="text-lg">
+                <h4 className="text-2xl font-medium">Reformas Estructurales</h4>
+                <p className="text-2xl">
                   Implementar políticas económicas y reformas que promuevan la
                   inversión, la competitividad y el desarrollo inclusivo será
                   clave.
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h4 className="text-xl font-medium">
+                <h4 className="text-2xl font-medium">
                   Expansión de la Economía Digital
                 </h4>
-                <p className="text-lg">
+                <p className="text-2xl">
                   Crecimiento de la economía digital, Perú tiene la oportunidad
                   de modernizar sus industrias y mejorar la productividad.
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h4 className="text-xl font-medium">
+                <h4 className="text-2xl font-medium">
                   Crecimiento en Sectores Clave
                 </h4>
-                <p className="text-lg">
+                <p className="text-2xl">
                   A pesar de los desafíos, se proyecta un crecimiento moderado
                   en sectores como la manufactura y la construcción, con tasas
                   esperadas del 3.8% y 3.6% respectivamente.
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h4 className="text-xl font-medium">
+                <h4 className="text-2xl font-medium">
                   Fortalecimiento de la Integración Regional
                 </h4>
-                <p className="text-lg">
+                <p className="text-2xl">
                   Oportunidad de jugar un papel activo en la promoción del
                   comercio y la inversión en la región, lo que podría fortalecer
                   su posición económica y política a nivel global.
@@ -481,20 +481,20 @@ const EconomicStructurePage = async ({
             </h3>
             <div className="mt-10 ml-5 flex flex-col gap-4">
               <div className="flex flex-col gap-2">
-                <h4 className="text-xl font-medium">
+                <h4 className="text-2xl font-medium">
                   Cambio Climático y agricultura
                 </h4>
-                <p className="text-lg">
+                <p className="text-2xl">
                   Estos fenómenos representan un desafío continuo para la
                   región, que deberá adaptar sus actividades económicas para
                   mitigar estos efectos.
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h4 className="text-xl font-medium">
+                <h4 className="text-2xl font-medium">
                   Brechas de Infraestructura y Servicios
                 </h4>
-                <p className="text-lg">
+                <p className="text-2xl">
                   Aunque el PDRC busca cerrar brechas significativas en
                   infraestructura y acceso a servicios, la región aún enfrenta
                   desafíos en términos de desarrollo equitativo, especialmente
@@ -510,20 +510,20 @@ const EconomicStructurePage = async ({
             </h3>
             <div className="mt-10 ml-5 flex flex-col gap-4">
               <div className="flex flex-col gap-2">
-                <h4 className="text-xl font-medium">
+                <h4 className="text-2xl font-medium">
                   Impulso a Negocios Sostenibles
                 </h4>
-                <p className="text-lg">
+                <p className="text-2xl">
                   A través del programa Procompite 2024, se ha destinado una
                   inversión histórica de 30 millones de soles para apoyar a 250
                   unidades de negocio en 10 cadenas productivas.
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h4 className="text-xl font-medium">
+                <h4 className="text-2xl font-medium">
                   Exportación y Innovación
                 </h4>
-                <p className="text-lg">
+                <p className="text-2xl">
                   Huánuco tiene el potencial de desarrollar productos
                   especializados en cada uno de sus valles, con miras a la
                   exportación. El apoyo a la agroexportación y la transferencia
@@ -531,10 +531,10 @@ const EconomicStructurePage = async ({
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h4 className="text-xl font-medium">
+                <h4 className="text-2xl font-medium">
                   Planeamiento Estratégico y Sostenibilidad
                 </h4>
-                <p className="text-lg">
+                <p className="text-2xl">
                   El enfoque del PDRC en la sostenibilidad y el desarrollo
                   estratégico ofrece una hoja de ruta clara para enfrentar los
                   desafíos de la región. Este plan incluye iniciativas para
@@ -546,7 +546,7 @@ const EconomicStructurePage = async ({
         </section>
         <section>
           <h2 className="text-4xl font-semibold mt-16">6. Referencias</h2>
-          <ul className="flex flex-col gap-[14px] text-lg ml-5 mt-10">
+          <ul className="flex flex-col gap-[14px] text-2xl ml-5 mt-10">
             <li>
               - Contreras, C., & Cueto, M. (2013). Historia del Perú
               Contemporáneo: Desde las luchas por la independencia hasta el
