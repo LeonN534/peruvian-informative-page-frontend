@@ -6,10 +6,12 @@ import LoginToast from "@/app/components/LoginToast";
 import { Topics } from "@/app/enums/topics.enum";
 import Descentralismo from "@/../public/images/descentralismo.png";
 
+type Params = Promise<{ page: string }>;
+
 const DescentralizationProcessPage = async ({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Params;
 }) => {
   const { page } = await searchParams;
   return (

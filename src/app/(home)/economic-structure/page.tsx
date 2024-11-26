@@ -9,10 +9,12 @@ import { Topics } from "@/app/enums/topics.enum";
 import LoginToast from "@/app/components/LoginToast";
 import ConfirmationModal from "@/app/components/ConfirmationModal";
 
+type Params = Promise<{ page: string }>;
+
 const EconomicStructurePage = async ({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Params;
 }) => {
   const { page } = await searchParams;
   return (
