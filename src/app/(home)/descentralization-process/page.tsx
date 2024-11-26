@@ -5,6 +5,7 @@ import ConfirmationModal from "@/app/components/ConfirmationModal";
 import LoginToast from "@/app/components/LoginToast";
 import { Topics } from "@/app/enums/topics.enum";
 import Descentralismo from "@/../public/images/descentralismo.png";
+import Link from "next/link";
 
 type Params = Promise<{ page: string }>;
 
@@ -433,6 +434,13 @@ const DescentralizationProcessPage = async ({
             </li>
           </ul>
         </section>
+        <Link
+          href="/DESCENTRALIZACION.pptx"
+          download="DESCENTRALIZACION.pptx"
+          className="bg-blue-300 text-black text-2xl font-semibold rounded-lg px-4 py-2 mt-20 block w-max"
+        >
+          Descargar presentación
+        </Link>
       </main>
       <Comentaries
         topic={Topics.DESCENTRALIZATION_PROCESS}

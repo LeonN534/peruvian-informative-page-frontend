@@ -8,6 +8,7 @@ import Comentaries from "@/app/components/Comentaries";
 import { Topics } from "@/app/enums/topics.enum";
 import LoginToast from "@/app/components/LoginToast";
 import ConfirmationModal from "@/app/components/ConfirmationModal";
+import Link from "next/link";
 
 type Params = Promise<{ page: string }>;
 
@@ -602,6 +603,13 @@ const EconomicStructurePage = async ({
             </li>
           </ul>
         </section>
+        <Link
+          href="/Estructura económica y desarrollo del país y la región.pptx"
+          download="Estructura económica y desarrollo del país y la región.pptx"
+          className="bg-blue-300 text-black text-2xl font-semibold rounded-lg px-4 py-2 mt-20 block w-max"
+        >
+          Descargar presentación
+        </Link>
       </main>
       <Comentaries topic={Topics.ECONOMIC_STRUCTURE} page={Number(page)} />
     </>
