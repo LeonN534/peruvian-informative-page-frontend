@@ -31,6 +31,7 @@ const BasicInput = ({
   min?: number | string;
   required?: boolean;
   form: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   formState: any;
   defaultValue?: string;
   hasBackendErrors?: boolean;

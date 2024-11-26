@@ -3,9 +3,9 @@ import { getLoggedInUser, verifyToken } from "./app/services/auth.service";
 
 export async function middleware(request: NextRequest) {
   const currentPath = request.nextUrl.pathname;
-  let userRes = await getLoggedInUser();
+  const userRes = await getLoggedInUser();
 
-  let url = request.nextUrl.clone();
+  const url = request.nextUrl.clone();
 
   if (currentPath.startsWith("/forgot-password/restore")) {
     url.search = "";

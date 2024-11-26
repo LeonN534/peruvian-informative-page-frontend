@@ -17,6 +17,7 @@ const schemaCommentary = z.object({
 export async function publishCommentAction(
   topic: Topics,
   userId: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   prevState: any,
   formData: FormData
 ) {

@@ -14,6 +14,7 @@ const initialState: User = {
 const actions = {
   fetchData:
     () =>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     async ({ setState }: any) => {
       setState({ isLoading: true });
       try {
@@ -21,6 +22,7 @@ const actions = {
         let data: User = initialState;
         if (res.success) data = res.data;
         setState(data);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (error) {
         setState(initialState);
       }

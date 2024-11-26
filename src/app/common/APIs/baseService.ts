@@ -7,6 +7,7 @@ export async function myFetch<T extends FetchResponse>(
   isCustomURL: boolean,
   endpoint: string,
   payload: string | FormData,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   resultHandler: (response: T) => any,
   errorHandler: ErrorHandlder,
   method = HttpMethod.POST,
@@ -39,7 +40,7 @@ export async function myFetch<T extends FetchResponse>(
     .then((data: T) => {
       if (!data.status && data.status !== undefined) {
         let errorMessage = "Unexpected error has ocurred";
-        // @ts-ignore
+        // @ts-expect-error: data.errors might not exist
         errorMessage = data?.errors ? data.errors[0] : errorMessage;
         errorHandler(errorMessage);
         return;

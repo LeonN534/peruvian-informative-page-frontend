@@ -89,6 +89,7 @@ const schemaChangePassword = z
     path: ["confirmedPassword"],
   });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function registerUserAction(prevState: any, formData: FormData) {
   const validatedFields = schemaRegister.safeParse({
     email: formData.get("email"),
@@ -163,6 +164,7 @@ export async function registerUserAction(prevState: any, formData: FormData) {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function loginUserAction(prevState: any, formData: FormData) {
   const validatedFields = schemaLogin.safeParse({
     email: formData.get("email"),
@@ -221,6 +223,7 @@ export async function loginUserAction(prevState: any, formData: FormData) {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function forgotPasswordAction(prevState: any, formData: FormData) {
   const validatedFields = schemaForgotPassword.safeParse({
     email: formData.get("email"),
@@ -275,6 +278,7 @@ export async function forgotPasswordAction(prevState: any, formData: FormData) {
 
 export async function restorePasswordAction(
   token: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   prevState: any,
   formData: FormData
 ) {
@@ -346,6 +350,7 @@ export async function restorePasswordAction(
   };
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function changePasswordAction(prevState: any, formData: FormData) {
   const validatedFields = schemaChangePassword.safeParse({
     currentPassword: formData.get("currentPassword"),
