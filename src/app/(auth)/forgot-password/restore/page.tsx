@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import RestorePasswordForm from "../components/RestorePasswordForm";
 
 const RestorePasswordPage = () => {
@@ -7,7 +7,9 @@ const RestorePasswordPage = () => {
       <h1 className="text-white font-black text-4xl text-center mb-10">
         Restaurar contraseña
       </h1>
-      <RestorePasswordForm />
+      <Suspense fallback={<div>Loading...</div>}>
+        <RestorePasswordForm />
+      </Suspense>
     </div>
   );
 };
